@@ -1,10 +1,10 @@
 # Always-Learning
 # Conditions
-1.Conditions
+1. Conditions
 ```python 
 b = true if a>1 else false 
 ```
-2.Function
+2. Function
 * else will execute if while is not exited from break statement 
 ```python
 while...else...
