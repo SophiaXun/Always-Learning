@@ -71,3 +71,38 @@ class Rectangle:
   end = time.perf_counter()
   time = end - start
   ```
+* * *
+# Section 3 Variables and Memory
+* Immutable: The value of a var can never be changed. New result of a var is to change to pointer to a new space with new value  
+* Mutable: can be changed
+  * Lists, sets, dic, users-defined classes
+  * List.append won’t change the address, but using '+' will change the address  
+  e.g. ```new_list = [1,2,3] + [4]``` will change the address  
+  ``` new_list.append(4)``` won't change the address  
+  * mutable collection objects are not safe from side effect
+  ![Screenshot]()
+* Immutable:
+  * An object whose internal state cannot be changed
+  * numbers(int, float, boolean), strings, tuples, frozen set, user-defined classes
+  * Mutable in immutable object is mutable  
+  e.g. ```t=([1,2]) -> t=([1,2,3])``` and the address of t won’t be changed
+* Memory Optimization  
+  * Immutable var: Python manager will locate same memory for immutable var if they have the same value no matter how to initiate the var.  
+  ```python
+  a = 10,
+  b = int(10)
+  c = int('10')
+  d = int('1010', 2)
+  print(id(a), id(b), id(c), id(d))
+  --> 194xd, 194xd, 194xd, 194xd
+  c = [1,2]
+  d = c
+  // c and d will have the same memory address
+  d.append(3)
+  print(c)
+  --> [1,2,3]
+  // c and d will still have the same memory address
+  ```
+  * Mutable var, the python manager will locate different locations even though they have the same value (only within integer between [-5, 256]
+[]
+
